@@ -1,6 +1,7 @@
 package config
 
 import (
+	"github.com/joho/godotenv"
 	"log"
 	"os"
 	"strconv"
@@ -34,9 +35,9 @@ func GetConfig() *AppConfig {
 
 func initConfig() *AppConfig {
 	var defConfig AppConfig
-	//if err := godotenv.Load(".env"); err != nil {
-	//	log.Fatal(err)
-	//}
+	if err := godotenv.Load(".env"); err != nil {
+		log.Fatal(err)
+	}
 
 	defConfig.DB_USERNAME = os.Getenv("MYSQLUSER")
 	defConfig.DB_PASSWORD = os.Getenv("MYSQLPASSWORD")

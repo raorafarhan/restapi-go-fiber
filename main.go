@@ -8,6 +8,7 @@ import (
 	"restapi-gofiber/factory"
 	"restapi-gofiber/migration"
 	"restapi-gofiber/utils/database/mysql"
+	"strconv"
 )
 
 func main() {
@@ -17,6 +18,7 @@ func main() {
 	migration.InitMigrate(db)
 	factory.InitFactory(e, db)
 
+	fmt.Println("server running on port " + strconv.Itoa(cfg.SERVERPORT))
 	log.Fatal(e.Listen(fmt.Sprintf(":%d", cfg.SERVERPORT)))
-	fmt.Sprintf("%s", "%s", "%d", "server running on port", " ", cfg.SERVERPORT)
+
 }
