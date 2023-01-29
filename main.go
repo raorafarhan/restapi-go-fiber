@@ -19,6 +19,6 @@ func main() {
 	factory.InitFactory(e, db)
 
 	fmt.Println("server running on port " + strconv.Itoa(cfg.SERVERPORT))
-	log.Fatal(e.Listen(fmt.Sprintf(":%d", cfg.SERVERPORT)))
+	log.Fatal(e.Listen(fmt.Sprintf("%s, :%d", "0.0.0.0", cfg.SERVERPORT)))
 
 }
