@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/gofiber/fiber/v2"
 	"log"
+	"os"
 	"restapi-gofiber/config"
 	"restapi-gofiber/factory"
 	"restapi-gofiber/migration"
@@ -16,5 +17,5 @@ func main() {
 	migration.InitMigrate(db)
 	factory.InitFactory(e, db)
 
-	log.Fatal(e.Listen(":8080"))
+	log.Fatal(e.Listen(os.Getenv(":/" + "SERVERPORT")))
 }
