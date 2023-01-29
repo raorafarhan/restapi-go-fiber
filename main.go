@@ -18,5 +18,5 @@ func main() {
 	factory.InitFactory(e, db)
 
 	log.Fatal(e.Listen(fmt.Sprintf(":%d", cfg.SERVERPORT)))
-	log.Println(fmt.Sprintf("%s", "%s", "%d", "server running on port", " ", cfg.SERVERPORT))
+	fmt.Sprintf("%s", "%s", "%d", "server running on port", " ", cfg.SERVERPORT))
 }
