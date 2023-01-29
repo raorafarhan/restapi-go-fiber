@@ -54,7 +54,7 @@ func initConfig() *AppConfig {
 
 	defConfig.DB_PORT = dbPortConv
 
-	serverPortConv, errServerPort := strconv.Atoi(os.Getenv("SERVER_PORT"))
+	serverPortConv, errServerPort := strconv.Atoi(os.Getenv("SERVERPORT"))
 
 	if errServerPort != nil {
 		log.Fatal(errServerPort)
