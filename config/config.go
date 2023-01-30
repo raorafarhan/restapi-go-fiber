@@ -14,7 +14,7 @@ type AppConfig struct {
 	DB_HOST     string
 	DB_PORT     int
 	DB_NAME     string
-	SERVERPORT  int
+	PORT        int
 }
 
 var lock = &sync.Mutex{}
@@ -52,14 +52,14 @@ func initConfig() *AppConfig {
 
 	defConfig.DB_PORT = dbPortConv
 
-	serverPortConv, errServerPort := strconv.Atoi(os.Getenv("SERVERPORT"))
+	serverPortConv, errServerPort := strconv.Atoi(os.Getenv("PORT"))
 
 	if errServerPort != nil {
 		log.Fatal(errServerPort)
 		return nil
 	}
 
-	defConfig.SERVERPORT = serverPortConv
+	defConfig.PORT = serverPortConv
 
 	return &defConfig
 }

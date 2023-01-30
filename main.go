@@ -18,7 +18,7 @@ func main() {
 	migration.InitMigrate(db)
 	factory.InitFactory(e, db)
 
-	fmt.Println("server running on port " + strconv.Itoa(cfg.SERVERPORT))
-	log.Fatal(e.Listen("0.0.0.0:" + strconv.Itoa(cfg.SERVERPORT)))
+	fmt.Println("server running on port " + strconv.Itoa(cfg.PORT))
+	log.Fatal(e.Listen("0.0.0.0:" + strconv.Itoa(cfg.PORT)))
 
 }
