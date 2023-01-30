@@ -6,12 +6,12 @@ import (
 
 type BaseResponseSuccess struct {
 	Status  string      `json:"status"`
-	Massage string      `json:"massage"`
+	Massage string      `json:"message"`
 	Data    interface{} `json:"data,omitempty"`
 }
 type BaseResponseFailed struct {
 	Status  string `json:"status"`
-	Massage string `json:"massage"`
+	Massage string `json:"message"`
 }
 
 func GetResponseSuccess(c *fiber.Ctx, data interface{}) error {

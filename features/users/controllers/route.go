@@ -79,14 +79,14 @@ func (controller *userControllers) UpdateUser(c *fiber.Ctx) error {
 	if err != nil {
 		return c.Status(500).JSON(fiber.Map{
 			"status":  "failed",
-			"massage": "data not found",
+			"message": "data not found",
 		})
 	}
 
 	if row != 1 {
 		return c.Status(500).JSON(fiber.Map{
 			"status":  "failed",
-			"massage": err,
+			"message": err,
 		})
 	}
 	return helper.GetResponseSuccess(c, nil)
